@@ -10,7 +10,7 @@ class Solution:
                 if i-coin >= 0 and dp[i-coin] >= 0 and (count<0 or dp[i-coin] < count):
                     count = dp[i-coin]
             dp[i] = count + 1 if count >= 0 else -1
-        return dp[-1]   
+        return dp[-1]
 
 sol = Solution()
 print(sol.coinChange([186,419,83,408],6249))
