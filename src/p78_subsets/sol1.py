@@ -7,6 +7,20 @@ class Solution:
       - unique subset
       - [] counts
     """
+    return self.subsets_bit_manipulation(nums)
+
+  def subsets_bit_manipulation(self, nums):
+    size = 1 << len(nums)
+    res = []
+    for i in range(size):
+      cur = []
+      for j in range(len(nums)):
+        if i >> j & 1:
+          cur.append(nums[j])
+      res.append(cur)
+    return res 
+
+  def subsets_backtracking(self, nums):
     if not nums:
       return []
     
